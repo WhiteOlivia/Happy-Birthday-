@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Stylesheet -->
+    <style>
+       body {
+        background-color:#cfc2be ;
+       font-family: 'Shadows Into Light', cursive;
+         
+      }
+      
+      
+      img {
+         border: 3px outset #edefed;
+        text-align: center;
+      
+      }
+      
+     button {
+       font-size: 15px;
+       background-color: #cdb5ae;
+       color: #f2edec;
+       border-radius: 20px;
+       padding: 15px 5px;
+       text-align: center;
+       position: absolute; 
+       top: 49%;
+       left: 47%;
+     } 
+      
+      #outside {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: #e9e1c9;
+        position: absolute;
+        z-index: 1;
+         transition: transform 1s; 
+        transform-origin: 0;
+        color: #a6dae5;
+        
+      }
+      #button_outside {
+        background-color: #6eacb8;
+      }
+      #inside {
+        width: 100%;
+        height: 100%;
+       text-align:center;
+        background-color: #eacfd9;
+        position: absolute;
+        z-index: 0;
+        color: #6eacb8;
+      }
+      
+      /* Opening the card */ 
+      .open-card {
+        transform: rotateY(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Outer Page of the Crad-->
+    <div id="outside">
+      <h1 id="outside-title">
+       Happy Birth Day!
+      </h1>
+       <img id="outside-pic" src="Img/bark" alt= "Picture of Dog" width="350"/>
+      
+      <button onclick="open_card()" id= "button_outside">
+       Click to Open
+     </button>
+    </div>
+   
+    <!--Inner Page of the Card-->
+    <div id="inside">
+      <h1 id="inside-title">
+        Happy Birthday, Star
+      </h1>
+      <img id="inside-pic"src="Img/Cute" alt="Cute Dog" width=250 />
+      <p id="message">
+        Hi. Your name is Star! You like <b>being annoying</b> and <b>being cute</b>
+        <b><u>Your birthday is on the 10th of August</u></b>
+        <br />
+        Have a great Birthday!
+      </p>
+      <!--Closing BUtton -->
+      <p>
+        <button onclick="close_card()">
+          Click to Close
+        </button>
+      </p>
+       
+      </div>
+      <!--Javascript-->
+    <script>
+       function open_card() {
+         outside_div =    document.querySelector("#outside");
+         outside_div.className = "open-card" ;
+         }
+      function close_card() {
+        inside_div = document.querySelector("#outside");
+        inside_div.className = "";
+      }
+    
+         </script>
+  </body>
+</html>
